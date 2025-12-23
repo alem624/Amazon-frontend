@@ -3,8 +3,9 @@ import LayOut from "../../Components/LayOut/LayOut";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { productUrl } from "../../Api/endPoints";
-import Productcard from "../../Components/Product/ProductCard";
 import Loader from "../../Components/Loader/Loader";
+import ProductCard from "../../Components/Product/ProductCard";
+
 function ProductDetail() {
   const { productId } = useParams();
   const [product, setproduct] = useState({});
@@ -28,7 +29,7 @@ function ProductDetail() {
       {isLoading ? (
         <Loader />
       ) : (
-        <Productcard
+        <ProductCard
           product={product}
           flex={true}
           renderDesc={true}

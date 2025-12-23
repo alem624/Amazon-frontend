@@ -1,13 +1,13 @@
 import React, { useContext } from "react";
 import LayOut from "../../Components/LayOut/LayOut";
 import { DataContext } from "../../Components/DataProvider/DataProvider";
-import Productcard from "../../Components/Product/ProductCard";
 import CurrencyFormat from "../../Components/CurrencyFormat/CurrencyFormat";
 import { Link } from "react-router-dom";
 import classes from "./Cart.module.css";
 import { Type } from "../../Components/Utility/action.type";
 import { IoIosArrowDown } from "react-icons/io";
 import { IoIosArrowUp } from "react-icons/io";
+import ProductCard from "../../Components/Product/ProductCard";
 
 function Cart() {
   const [{ basket, user }, dispatch] = useContext(DataContext);
@@ -39,7 +39,7 @@ function Cart() {
             basket?.map((item, i) => {
               return (
                 <section key={item.id} className={classes.cart_product}>
-                  <Productcard
+                  <ProductCard
                     key={i}
                     product={item}
                     renderDesc={true}

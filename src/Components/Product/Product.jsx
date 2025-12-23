@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import Productcard from "./ProductCard";
+import ProductCard from "./ProductCard";
 import classes from "./Product.module.css";
 import Loader from "../Loader/Loader";
 
@@ -30,7 +30,7 @@ function Product() {
       ) : (
         <section className={classes.products_container}>
           {products?.map((singleproduct) => (
-            <Productcard
+            <ProductCard
               renderAdd={true}
               product={singleproduct}
               key={singleproduct.id}

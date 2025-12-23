@@ -3,7 +3,8 @@ import styles from "./order.module.css";
 import LayOut from "../../Components/LayOut/LayOut";
 import { db } from "../../Components/Utility/firebase";
 import { DataContext } from "../../Components/DataProvider/DataProvider";
-import Productcard from "../../Components/Product/ProductCard";
+import ProductCard from "../../Components/Product/ProductCard";
+
 
 
 function Orders() {
@@ -48,7 +49,7 @@ function Orders() {
                   <p>Order ID: {eachOrder?.id}</p>
 
                   {eachOrder?.data?.basket?.map((order) => (
-                    <Productcard flex={true} product={order} key={order.id} />
+                    <ProductCard flex={true} product={order} key={order.id} />
                   ))}
                 </div>
               );

@@ -2,7 +2,6 @@ import React, { useContext, useState } from "react";
 import styles from "./Payments.module.css";
 import LayOut from "../../Components/LayOut/LayOut";
 import { DataContext } from "../../Components/DataProvider/DataProvider";
-import ProductCard from "../../Components/Product/ProductCard";
 import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
 import CurrencyFormat from "../../Components/CurrencyFormat/CurrencyFormat";
 import { useNavigate } from "react-router-dom";
@@ -10,6 +9,7 @@ import { instance } from "../../Api/axios";
 import { ClipLoader } from "react-spinners";
 import { db } from "../../Components/Utility/firebase";
 import { Type } from "../../Components/Utility/action.type";
+import ProductCard from "../../Components/Product/ProductCard";
 
 function Payments() {
   const navigate = useNavigate();

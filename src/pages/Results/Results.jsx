@@ -3,9 +3,9 @@ import LayOut from "../../Components/LayOut/LayOut";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { productUrl } from "../../Api/endPoints";
-import Productcard from "../../Components/Product/ProductCard";
 import classes from "./Results.module.css";
 import Loader from "../../Components/Loader/Loader";
+import ProductCard from "../../Components/Product/ProductCard";
 
 function Results() {
   const [results, setResults] = useState([]);
@@ -36,7 +36,7 @@ function Results() {
         ) : (
           <div className={classes.products_container}>
             {results?.map((product) => (
-              <Productcard
+              <ProductCard
                 key={product.id}
                 renderAdd={true}
                 product={product}

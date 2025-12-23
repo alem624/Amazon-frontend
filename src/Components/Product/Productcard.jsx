@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 import { DataContext } from '../DataProvider/DataProvider'
 import { Type } from "../Utility/action.type";
 
-function Productcard({ product, flex, renderDesc, renderAdd }) {
+function ProductCard({ product, flex, renderDesc, renderAdd }) {
   const { image, title, id, rating, price, description } = product;
   const [state,dispatch]= useContext(DataContext)
   const addToCart = ()=>{
@@ -49,4 +49,4 @@ function Productcard({ product, flex, renderDesc, renderAdd }) {
   );
 }
 
-export default Productcard
+export default ProductCard
