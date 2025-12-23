@@ -1,32 +1,29 @@
-import React, { useEffect, useState, useSyncExternalStore } from 'react'
-import LayOut from '../../Components/LayOut/LayOut'
-import { useParams } from 'react-router-dom';
-import axios from 'axios';
-import { productUrl } from '../../Api/endPoints';
-import Productcard from '../../Components/Product/Productcard';
-import classes from './Results.module.css'
-import Loader from '../../Components/Loader/Loader';
+import React, { useEffect, useState, useSyncExternalStore } from "react";
+import LayOut from "../../Components/LayOut/LayOut";
+import { useParams } from "react-router-dom";
+import axios from "axios";
+import { productUrl } from "../../Api/endPoints";
+import Productcard from "../../Components/Product/ProductCard";
+import classes from "./Results.module.css";
+import Loader from "../../Components/Loader/Loader";
 
 function Results() {
-  const [results , setResults]=useState([]);
+  const [results, setResults] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const {categoryName}=useParams()
-useEffect(() => {
-  setIsLoading(true);
-  axios
-    .get(`${productUrl}/products/category/${categoryName}`)
-    .then((res) => {
-      setResults(res.data);
-      setIsLoading(false);
-    })
-    .catch((err) => {
-      console.log(err);
-      setIsLoading(false);
-    });
-  
-}, [])
-
-
+  const { categoryName } = useParams();
+  useEffect(() => {
+    setIsLoading(true);
+    axios
+      .get(`${productUrl}/products/category/${categoryName}`)
+      .then((res) => {
+        setResults(res.data);
+        setIsLoading(false);
+      })
+      .catch((err) => {
+        console.log(err);
+        setIsLoading(false);
+      });
+  }, []);
 
   return (
     <LayOut>
@@ -52,4 +49,4 @@ useEffect(() => {
   );
 }
 
-export default Results
+export default Results;
